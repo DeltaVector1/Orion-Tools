@@ -1,0 +1,79 @@
+2025-03-08 15:54:11,008 - ERROR - Error during SHA-256 deduplication: expected str, bytes or os.PathLike object, not NoneType
+Traceback (most recent call last):
+  File "/home/mango/Misc/Scripts/ShareGPT-Tools/deduplication.py", line 29, in perform_sha256_deduplication
+    with open(input_file, 'r', encoding='utf-8') as f_in, open(output_file, 'w', encoding='utf-8') as f_out:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2025-03-08 15:54:16,394 - ERROR - Error during SHA-256 deduplication: expected str, bytes or os.PathLike object, not NoneType
+Traceback (most recent call last):
+  File "/home/mango/Misc/Scripts/ShareGPT-Tools/deduplication.py", line 29, in perform_sha256_deduplication
+    with open(input_file, 'r', encoding='utf-8') as f_in, open(output_file, 'w', encoding='utf-8') as f_out:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2025-03-08 15:55:01,259 - ERROR - Error during MinHash deduplication: [Errno 2] No such file or directory: '/home/mango/Misc/Scripts/ShareGPT-Tools/deslopped/output_analyzed_deslopped.jsonl'
+Traceback (most recent call last):
+  File "/home/mango/Misc/Scripts/ShareGPT-Tools/deduplication.py", line 54, in perform_min_hash_deduplication
+    with open(input_file, 'r', encoding='utf-8') as f_in, open(output_file, 'w', encoding='utf-8') as f_out:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mango/Misc/Scripts/ShareGPT-Tools/deslopped/output_analyzed_deslopped.jsonl'
+2025-03-08 15:55:27,513 - ERROR - Error during MinHash deduplication: [Errno 2] No such file or directory: './deslop'
+Traceback (most recent call last):
+  File "/home/mango/Misc/Scripts/ShareGPT-Tools/deduplication.py", line 54, in perform_min_hash_deduplication
+    with open(input_file, 'r', encoding='utf-8') as f_in, open(output_file, 'w', encoding='utf-8') as f_out:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: './deslop'
+2025-04-01 23:51:03,426 - ERROR - Error during MinHash deduplication: RMinHashLSH.__new__() missing 1 required positional argument: 'num_bands'
+Traceback (most recent call last):
+  File "/home/mango/Misc/Scripts/ShareGPT-Tools/deduplication.py", line 48, in perform_min_hash_deduplication
+    self.lsh = RMinHashLSH(threshold=self.threshold, num_perm=128)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: RMinHashLSH.__new__() missing 1 required positional argument: 'num_bands'
+2025-04-01 23:52:13,717 - ERROR - Error during MinHash deduplication: RMinHashLSH.__new__() missing 1 required positional argument: 'threshold'
+Traceback (most recent call last):
+  File "/home/mango/Misc/Scripts/ShareGPT-Tools/deduplication.py", line 52, in perform_min_hash_deduplication
+    self.lsh = RMinHashLSH(num_perm=num_perm, num_bands=num_bands)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: RMinHashLSH.__new__() missing 1 required positional argument: 'threshold'
+2025-04-01 23:52:53,669 - ERROR - Error during MinHash deduplication: argument 'items': 'int' object cannot be converted to 'PyString'
+Traceback (most recent call last):
+  File "/home/mango/Misc/Scripts/ShareGPT-Tools/deduplication.py", line 64, in perform_min_hash_deduplication
+    m = self.generate_min_hash(shingles)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mango/Misc/Scripts/ShareGPT-Tools/deduplication.py", line 100, in generate_min_hash
+    m.update(shingle.encode('utf-8'))
+TypeError: argument 'items': 'int' object cannot be converted to 'PyString'
+2025-04-01 23:53:40,329 - ERROR - Error during MinHash deduplication: argument 'key': 'str' object cannot be interpreted as an integer
+Traceback (most recent call last):
+  File "/home/mango/Misc/Scripts/ShareGPT-Tools/deduplication.py", line 67, in perform_min_hash_deduplication
+    self.lsh.insert(str(i), m)  # Using index as key, converted to string
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument 'key': 'str' object cannot be interpreted as an integer
+2025-05-15 03:48:16,318 - INFO - Deduplication complete. Removed 0 duplicates. Output: ./deduped/deduplicated_prax_deslopped.jsonl
+2025-05-15 03:50:52,110 - INFO - Deduplication complete. Removed 0 duplicates. Output: ./deduped/deduplicated_prax_deslopped.jsonl
+2025-05-15 03:57:42,039 - INFO - Deduplication complete. Removed 980 duplicates. Output: ./deduped-2/deduplicated_openhermes2_5.jsonl
+2025-05-16 02:51:30,297 - INFO - Deduplication complete. Removed 0 duplicates. Output: ./deduped/deduplicated_sonnet35-charcard-roleplay-sharegpt.jsonl
+2025-05-16 23:34:26,745 - INFO - Deduplication complete. Removed 0 duplicates. Output: ./deduped/deduplicated_personamaxx.jsonl
+2025-05-19 17:14:36,176 - INFO - Deduplication complete. Removed 150 duplicates. Output: ./dediped/deduplicated_co_deslopped.jsonl
+2025-05-22 02:34:33,477 - INFO - Deduplication complete. Removed 0 duplicates. Output: ./dedupeedddddddddddddd/deduplicated_cooking_forum_sharegpt.jsonl
+2025-05-22 02:52:35,057 - INFO - Deduplication complete. Removed 45704 duplicates. Output: ./output/deduplicated_nemotron_extra_sharegpt.jsonl
+2025-05-22 02:52:53,377 - INFO - Deduplication complete. Removed 45704 duplicates. Output: ./output/deduplicated_nemotron_extra_sharegpt.jsonl
+2025-05-22 02:53:02,898 - INFO - Deduplication complete. Removed 45704 duplicates. Output: ./output/deduplicated_nemotron_extra_sharegpt.jsonl
+2025-05-22 02:57:51,421 - INFO - Deduplication complete. Removed 25000 duplicates. Output: ./deduped/deduplicated_fixed.jsonl
+2025-05-22 15:59:04,511 - INFO - Deduplication complete. Removed 20165 duplicates. Output: ./dedped/deduplicated_output_sharegpt_deslopped_deslopped.jsonl
+2025-05-24 15:15:09,828 - INFO - Deduplication complete. Removed 20165 duplicates. Output: ./deduped/deduplicated_output_sharegpt_deslopped_deslopped.jsonl
+2025-05-27 03:38:09,874 - INFO - Deduplication complete. Removed 13625 duplicates. Output: ./deduped/deduplicated_helpsteer3.jsonl
+2025-05-28 00:35:32,185 - INFO - Deduplication complete. Removed 0 duplicates. Output: ./deduped/deduplicated_good.jsonl
+2025-05-28 00:56:23,176 - INFO - Deduplication complete. Removed 4812 duplicates. Output: ./deduped/deduplicated_accepted_edited_responses.jsonl
+2025-07-21 23:04:46,440 - INFO - Deduplication complete. Removed 0 duplicates. Output: ./deduped/deduplicated_multi_turn_reasoning_if_think-00000-of-00001_converted_deslopped.jsonl
+2025-07-21 23:05:12,045 - INFO - Deduplication complete. Removed 0 duplicates. Output: ./deduped/deduplicated_multi_turn_reasoning_if_think-00000-of-00001_converted_deslopped.jsonl
+2025-07-22 05:31:33,847 - ERROR - Error during sha256 deduplication: [Errno 2] No such file or directory: 'tank/wyvern/output.jsonl'
+Traceback (most recent call last):
+  File "/home/mango/Misc/Scripts/ShareGPT-Tools/deduplication.py", line 62, in perform_deduplication
+    with jsonlines.open(input_file) as reader:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mango/mainvenv/lib/python3.12/site-packages/jsonlines/jsonlines.py", line 328, in open
+    fp = io.open(name, mode=mode + 't', encoding='utf-8')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'tank/wyvern/output.jsonl'
+2025-07-22 05:31:54,105 - INFO - Deduplication complete. Removed 699 duplicates. Output: ./deduped-manus/deduplicated_output.jsonl
+2025-07-22 05:32:30,662 - INFO - Deduplication complete. Removed 1876 duplicates. Output: ./deduped-manus/deduplicated_output.jsonl
