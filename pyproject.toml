@@ -1,0 +1,38 @@
+[project]
+name = "orion-tools"
+version = "0.1.0"
+description = "Fast, simple data filtering tools for JSONL datasets"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "aiofiles>=23.0.0",
+    "datasketch>=1.6.0",
+    "jsonlines>=4.0.0",
+    "language-tool-python>=2.8.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "polars>=0.20.0",
+    "pyarrow>=14.0.0",
+    "spacy>=3.7.0",
+    "tqdm>=4.66.0",
+    "vllm>=0.5.0",
+    "ray>=2.9.0",
+]
+
+[project.scripts]
+phrase-filter = "orion_tools.cli.phrase_filter:main"
+dataset-filter = "orion_tools.cli.dataset_filter:main"
+deduplication = "orion_tools.cli.deduplication:main"
+complexity-analyzer = "orion_tools.cli.complexity_analyzer:main"
+grammar-maxxer = "orion_tools.cli.grammar_maxxer:main"
+binary-classifier = "orion_tools.cli.binary_classifier:main"
+fineweb-scorer = "orion_tools.cli.fineweb_scorer:main"
+ngram-analyzer = "orion_tools.cli.ngram_analyzer:main"
+semhash-dedupe = "orion_tools.cli.semhash_dedupe:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []

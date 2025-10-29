@@ -1,6 +1,28 @@
-*.jsonl
-Data/
-corrected/
-.ipynb_checkpoints/test-checkpoint.py
-.ipynb_checkpoints/f-checkpoint.txt
-.ipynb_checkpoints/filterer-checkpoint.py
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# UV
+.venv/
+uv.lock
+
+# Logs
+*.log
+app.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data files (optional - uncomment if needed)
+# *.jsonl
+# output/
