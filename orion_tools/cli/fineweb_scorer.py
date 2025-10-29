@@ -1,6 +1,10 @@
 """FineWeb-style quality scoring using vLLM."""
 import argparse
 import json
+import os
+
+# Set multiprocessing method for CUDA compatibility BEFORE any imports
+os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
 
 import numpy as np
 from tqdm import tqdm
@@ -121,6 +125,13 @@ def score_conversations(
 
 
 def main():
+    import multiprocessing
+    # Set spawn method for CUDA compatibility
+    try:
+        multiprocessing.set_start_method('spawn', force=True)
+    except RuntimeError:
+        pass  # Already set
+    
     parser = argparse.ArgumentParser(
         description="FineWeb-style quality scoring using vLLM",
         formatter_class=argparse.RawDescriptionHelpFormatter,

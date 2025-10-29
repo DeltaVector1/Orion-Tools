@@ -1,6 +1,10 @@
 """Binary classification filtering using vLLM."""
 import argparse
 import re
+import os
+
+# Set multiprocessing method for CUDA compatibility BEFORE any imports
+os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
 
 import spacy
 from tqdm import tqdm
@@ -159,6 +163,13 @@ def process_batch(batch: list, classifier: VLLMClassifier, nlp, threshold: float
 
 
 def main():
+    import multiprocessing
+    # Set spawn method for CUDA compatibility
+    try:
+        multiprocessing.set_start_method('spawn', force=True)
+    except RuntimeError:
+        pass  # Already set
+    
     parser = argparse.ArgumentParser(
         description="Binary classification filtering using vLLM",
         formatter_class=argparse.RawDescriptionHelpFormatter,

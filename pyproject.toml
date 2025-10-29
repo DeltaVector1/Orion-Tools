@@ -5,18 +5,18 @@ description = "Fast, simple data filtering tools for JSONL datasets"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "aiofiles>=23.0.0",
-    "datasketch>=1.6.0",
-    "jsonlines>=4.0.0",
-    "language-tool-python>=2.8.0",
-    "numpy>=1.24.0",
-    "pandas>=2.0.0",
-    "polars>=0.20.0",
-    "pyarrow>=14.0.0",
-    "spacy>=3.7.0",
-    "tqdm>=4.66.0",
-    "vllm>=0.5.0",
-    "ray>=2.9.0",
+    "aiofiles",
+    "datasketch",
+    "jsonlines",
+    "language-tool-python",
+    "numpy",
+    "pandas",
+    "polars",
+    "pyarrow",
+    "spacy",
+    "tqdm",
+    "vllm>=0.11.0",
+    "ray",
 ]
 
 [project.scripts]
