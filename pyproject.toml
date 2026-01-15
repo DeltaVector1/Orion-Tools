@@ -7,12 +7,14 @@ requires-python = ">=3.10"
 dependencies = [
     "aiofiles",
     "datasketch",
+    "datasets",
     "jsonlines",
     "language-tool-python",
     "numpy",
     "pandas",
     "polars",
     "pyarrow",
+    "pyyaml",
     "spacy",
     "tqdm",
     "vllm>=0.11.0",
@@ -29,6 +31,7 @@ binary-classifier = "orion_tools.cli.binary_classifier:main"
 fineweb-scorer = "orion_tools.cli.fineweb_scorer:main"
 ngram-analyzer = "orion_tools.cli.ngram_analyzer:main"
 semhash-dedupe = "orion_tools.cli.semhash_dedupe:main"
+seed-prompt-extractor = "orion_tools.cli.seed_prompt_extractor:main"
 
 [build-system]
 requires = ["hatchling"]

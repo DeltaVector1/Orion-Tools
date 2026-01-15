@@ -1,0 +1,65 @@
+# Seed Prompt Extraction Configuration
+#
+# Each dataset entry supports:
+#   - name: HuggingFace dataset name (required)
+#   - label: Custom label for output LABEL column (optional)
+#   - extract_system: Whether to extract system prompts (default: false)
+#   - ratio: Fraction of dataset to use, 0.0-1.0 (default: 1.0)
+#   - subset: Dataset subset/config name (optional)
+#   - split: Dataset split (default: "train")
+#   - conversation_key: Key for conversations array (default: "conversations")
+#
+# Special handling:
+#   - allenai/wildguardmix: Automatically filters for harmful prompts with refusal responses
+
+datasets:
+  # HelpSteer datasets
+  - name: Delta-Vector/Helpsteer-3-Edit-ShareGPT
+    label: CHAT
+    extract_system: false
+    ratio: 1.0
+
+  - name: Delta-Vector/Hydrus-HelpSteer2
+    label: CHAT
+    extract_system: false
+    ratio: 1.0
+
+  - name: Delta-Vector/Hydrus-Filtered-Helpsteer3-Preference-ShareGPT
+    label: CHAT
+    extract_system: false
+    ratio: 1.0
+
+  # Hydrus datasets
+  - name: Delta-Vector/Hydrus-Taskmaxx-Filter
+    label: CHAT
+    extract_system: false
+    ratio: 1.0
+
+  - name: Delta-Vector/Hydrus-Nemotron-Chat
+    label: CHAT
+    extract_system: false
+    ratio: 1.0
+
+  # AM Thinking datasets
+  - name: Delta-Vector/Hydrus-AM-Thinking-IF-No-Think
+    label: IF
+    extract_system: false
+    ratio: 1.0
+
+  - name: Delta-Vector/Hydrus-AM-Thinking-Code-Filtered
+    label: CODE
+    extract_system: false
+    ratio: 1.0
+
+  # Riddler
+  - name: Alignment-Lab-AI/riddler-sharegpt
+    label: REASONING
+    extract_system: false
+    ratio: 1.0
+
+  # WildGuard - for RL safety alignment
+  # Filters for: prompt_harm_label="harmful", response_refusal_label="refusal"
+  # Excludes: subcategory="benign"
+  - name: allenai/wildguardmix
+    label: SAFETY
+    ratio: 1.0  # ~10K harmful prompts for safety alignment
